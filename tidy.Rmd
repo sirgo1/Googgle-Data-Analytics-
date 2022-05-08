@@ -1,0 +1,23 @@
+
+
+## Cleaning Data Functions
+- rename()
+- rename_with()
+- glimpse()
+- select()
+- clean_names()
+- skim_without-charts()
+
+## Organising Data Functions
+- filter()
+- max()
+- mean()
+- summarize()
+- arrange()
+- group_by()
+- drop_na()
+
+## Transforming Data Functions
+- unite()
+- separate()
+- mutate()
