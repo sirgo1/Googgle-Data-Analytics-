@@ -1,0 +1,82 @@
+
+### Tools needed for Cleaning, Organizing and Transforming Data in R
+```{r}
+library(tidyverse)
+```
+
+
+#### Cleaning Data Tools
+- rename()
+- rename_with()
+- glimpse()
+- select()
+- clean_names()
+- skim_without-charts()
+
+#### Organising Data Tools
+
+- filter()
+- max()
+- mean()
+- summarize()
+- arrange()
+- group_by()
+- drop_na()
+
+#### Transforming Data Tools
+
+- `%>%` 
+- unite()
+- separate()
+- mutate()
+
+#### Checking for Bias Tools
+
+```{r}
+library(SimDesign)
+```
+
+- bias(actual, predicted)
+
+
+#### Summary statistics and visualization
+
+Anscombe's quartet has four datasets that have nearly identical summary statistics.
+
+```{r}
+library(Tmisc)
+```
+
+```{r}
+data(quartet)
+```
+
+
+```{r}
+quartet %>% group_by(set) %>% summarize(mean(x), sd(x), mean(y), sd(y), cor(x,y))
+```
+
+
+The standard deviation can help us understand the spread of values in a dataset and show us how far each value is from the mean.
+
+
+```{r}
+ggplot(quartet, aes(x,y)) + geom_point() + geom_smooth(method=lm, se=FALSE) + facet_wrap(~set)
+```
+
+
+
+`search()` shows attached datasets and packages 
+
+`detach()` remove attached datasets
+
+```{r}
+install.packages("datasauRus")
+library(datasauRus)
+```
+
+```{r}
+ggplot(datasaurus_dozen, aes(x=x, y=y, colour=dataset)) + geom_point() + 
+                theme_void() + theme(legend.position = "none") + facet_wrap(~dataset, ncol = 3)
+```
+
