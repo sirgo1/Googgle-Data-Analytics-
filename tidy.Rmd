@@ -68,7 +68,7 @@ ggplot(quartet, aes(x,y)) + geom_point() + geom_smooth(method=lm, se=FALSE) + fa
 
 `search()` shows attached datasets and packages 
 
-`detach()` remove attached datasets
+`detach()` remove attached datasets. Opposite of `attach()`
 
 ```{r}
 library(datasauRus)
